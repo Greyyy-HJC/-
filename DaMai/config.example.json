@@ -1,0 +1,84 @@
+黄龄
+{
+    "sess": [
+        1
+    ],
+    "price": [
+        1
+    ],
+    "date": 0,
+    "real_name": [
+        1,
+        2
+    ],
+    "nick_name": "再见孙大圣",
+    "ticket_num": 2,
+    "damai_url": "https://www.damai.cn/",
+    "target_url": "https://detail.damai.cn/item.htm?spm=a2oeg.search_category.0.0.23615485NUlACq&id=644234762578&clicktitle=2021%E9%BB%84%E9%BE%84%E2%80%9C%E7%9C%9F%C2%B7%E6%95%A2%C2%B7%E7%8E%A9%E2%80%9D%E5%B7%A1%E5%9B%9E%E6%BC%94%E5%94%B1%E4%BC%9A-%E4%B8%8A%E6%B5%B7%E7%AB%99",
+    "browser": 0
+}
+
+汪峰
+{
+    "sess": [
+        1
+    ],
+    "price": [
+        2
+    ],
+    "date": 0,
+    "real_name": [
+        2
+    ],
+    "nick_name": "再见孙大圣",
+    "ticket_num": 1,
+    "damai_url": "https://www.damai.cn/",
+    "target_url": "https://detail.damai.cn/item.htm?spm=a2oeg.search_category.0.0.7ad32ecbvGuIVH&id=645424297782&clicktitle=2021%E6%B1%AA%E5%B3%B0UNFOLLOW%E5%B7%A1%E5%9B%9E%E6%BC%94%E5%94%B1%E4%BC%9A%E6%AD%A6%E6%B1%89%E7%AB%99",
+    "browser": 0
+}
+
+{
+    "sess": [
+        1
+    ],
+    "price": [
+        1
+    ],
+    "date": 0,
+    "real_name": [
+        2
+    ],
+    "nick_name": "再见孙大圣",
+    "ticket_num": 1,
+    "damai_url": "https://www.damai.cn/",
+    "target_url": "https://detail.damai.cn/item.htm?spm=a2oeg.search_category.0.0.67fc4d15eRpnZm&id=644393318472&clicktitle=AIC%E4%B8%AD%E5%9B%BD%E5%9B%BD%E9%99%85%E6%88%BF%E8%BD%A6%E5%B1%95%E8%A7%88%E4%BC%9A",
+    "browser": 0
+}
+
+{
+    "sess": [
+        1
+    ],
+    "price": [
+        2
+    ],
+    "date": 0,
+    "real_name": [
+        2
+    ],
+    "nick_name": "再见孙大圣",
+    "ticket_num": 1,
+    "damai_url": "https://www.damai.cn/",
+    "target_url": "https://detail.damai.cn/item.htm?id=644519573912",
+    "browser": 0
+}
+
+### 点击跳过实名制提示弹框
+        if self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[3]/div[2]'):
+            self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[3]/div[2]').click()
+        ###
+
+### 点击跳过实名制提示弹框
+        if self.driver.find_elements_by_class_name('button'):
+            self.driver.find_elements_by_class_name('button')[1].click()
+        ###
