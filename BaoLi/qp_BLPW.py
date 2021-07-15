@@ -96,7 +96,13 @@ class Rmzm(object):
                                  "atgc": atgc,
                                  "utgc": "utoken", "timestamp": int(time_stamp), "applicationCode": "plat_pc"}}
         res = self.session.post(url, cookies=cookies, data=json.dumps(data),
-                                headers={'Content-Type': 'application/json;charset=UTF-8'})
+                                    headers = {'Host': 'platformpcgateway.polyt.cn', 'Connection': 'keep-alive', 'Content-Length': '250',
+                   'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+                   'Accept': 'application/json, text/plain, */*', 'httpType': 'detail', 'sec-ch-ua-mobile': '?0',
+                   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                   'Content-Type': 'application/json', 'Origin': 'https://www.polyt.cn', 'Sec-Fetch-Site': 'same-site',
+                   'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'https://www.polyt.cn/',
+                   'Accept-Encoding': 'gzip, deflate, br', 'Accept-Language': 'zh-CN,zh;q=0.9'})
         print(res.text)
         self.showTime = res.json().get('data').get('showTime')
         self.showId = str(res.json().get('data').get('showMap').get('showId'))
@@ -202,12 +208,14 @@ if __name__ == '__main__':
     # https://www.polyt.cn/search?keyWord=%E4%BF%9D%E5%88%A9%C2%B7%E5%A4%AE%E5%8D%8E%E2%80%9C%E7%A5%9E%E5%B7%9E%E4%B9%9D%E5%9F%8E%EF%BC%8C%E5%85%B1%E4%BA%AB%E6%98%8E%E5%A4%A9%E2%80%9D2021%E6%BC%94%E5%87%BA%E8%A1%8C%E5%8A%A8%20%E5%A4%AE%E5%8D%8E%E7%89%88%E3%80%8A%E5%A6%82%E6%A2%A6%E4%B9%8B%E6%A2%A6%E3%80%8B%E6%AD%A6%E6%B1%89%E7%AB%99
     # 需保证页面上能搜索到
     # 不同账号不同场次同一观影人可买？？？
-    searchInfo = '孟京辉经典戏剧作品摇滚音乐剧《空中花园谋杀案》呼和浩特站'    ### 改成你要抢的演出的名称
+    searchInfo = '音乐剧《涩女郎》·上海站'    ### 改成你要抢的演出的名称
 
-    cookies = {'Hm_lvt_0cb4627679a11906d6bf0ced685dc014': '1625920613,1625920872',   ### 用你自己账号的cookie 
+    cookies = {'Hm_lvt_0cb4627679a11906d6bf0ced685dc014': '1626022494,1626026827,1626051145',   ### 用你自己账号的cookie 
                'loginSession': '840a5eb28fe9208071becf422e13ad73&&7383efef343f83fb7befa00fe3c9d124',
-               'Hm_lpvt_0cb4627679a11906d6bf0ced685dc014': '1625920948'}
-              
+               'acw_tc': '2f624a2316260611741505482e6443fa4e51669b63d6326c0d13b6fc8417fb',
+               'Hm_lpvt_0cb4627679a11906d6bf0ced685dc014': '1626061174'
+               }
+       
 
 
     s = Rmzm(cookies)
@@ -257,7 +265,7 @@ if __name__ == '__main__':
     all_show_info_list = s.get_show_info(product_id=product_id, project_id=project_id)
     # logger.info(f'总场次数：{len(all_show_info_list)}，场次信息：{all_show_info_list}')
     # 分布式去抢所有场次的票
-    for single_show_info in all_show_info_list[:10]:  ### 指定某个或某几个场次
+    for single_show_info in all_show_info_list[:1]:  ### 指定某个或某几个场次
         run_flag = 1
         t = threading.Thread(target=s.do_qp_task, kwargs=single_show_info)
         t.start()
