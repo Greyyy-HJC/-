@@ -333,14 +333,17 @@ class Concert(object):
             
     def check_order_1(self):
         if self.status in [3, 4]:
-            print('###开始确认订单###')
-            button_xpath = " //*[@id=\"confirmOrder_1\"]/div[%d]/button" # 同意以上协议并提交订单Xpath
+            print('###开始确认订单###')#!#
+            #button_xpath = " //*[@id=\"confirmOrder_1\"]/div[%d]/button" # 同意以上协议并提交订单Xpath
+            button_xpath = " //*[@id=\"container\"]/div/div[%d]/button" # 同意以上协议并提交订单Xpath
             button_replace = 8 # 当实名者信息不空时为9，空时为8
             if self.real_name: # 实名者信息不为空
                 button_replace = 9
                 print('###选择购票人信息###')
-                try:
-                    list_xpath = "//*[@id=\"confirmOrder_1\"]/div[2]/div[2]/div[1]/div[%d]/label/span[1]/input"
+                try:#!#
+                    #list_xpath = "//*[@id=\"confirmOrder_1\"]/div[2]/div[2]/div[1]/div[%d]/label/span[1]/input"
+                    list_xpath = "//*[@id=\"container\"]/div/div[2]/div[2]/div[1]/div[%d]/label/span[1]/input"
+                   
                     for i in range(len(self.real_name)): # 选择第i个实名者
                         WebDriverWait(self.driver, self.total_wait_time, self.refresh_wait_time).until(
                             EC.presence_of_element_located((By.XPATH, list_xpath%(i+1)))).click()
