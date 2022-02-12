@@ -232,7 +232,9 @@ class Concert(object):
 
             elif buybutton_text == "提交缺货登记":
                 print('###抢票失败，请手动提交缺货登记###')
-                break
+                #break # 如果要继续捡漏，注释掉 break
+                sleep(1) # 等待 n 秒后继续抢票 # 如果要继续捡漏，解注释此行
+                continue # 如果要继续捡漏，解注释此行
 
                 
     def choose_ticket_2(self):  # for type 2, i.e., piao.damai.cn
