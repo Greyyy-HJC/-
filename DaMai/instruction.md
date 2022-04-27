@@ -125,3 +125,5 @@ python Autoticket.py
 
 复制整个 “DaMai” 文件夹，可以命名为 “DaMai1”, “DaMai2” ...，每个文件夹按照上面“切换不同的账号抢票”部分的方法，生成不同账号对应的 “cookies.pkl”，并且修改每个文件夹里的 "config.json" 文件即可。要同时抢票，就在开票前一个个运行每个文件夹里的 “Autoticket.py”，让它们同时保持运行即可。
 
+## **票售罄后持续捡漏**
+见 Autoticket.py 代码 235-237 行
