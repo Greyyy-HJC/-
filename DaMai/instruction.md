@@ -16,7 +16,14 @@
 
 <br>
 
-打开 “chromedriver_download.txt” 里的教程网址，查看自己的 Chrome 浏览器版本，然后去下载相应版本的 chromedriver，把下载下来的 chromedriver.exe 文件放在和 Autoticket.py 同个目录下
+打开 “chromedriver_download.txt” 里的教程网址，查看自己的 Chrome 浏览器版本。
+
+Windows: 去 chromedriver 下载地址下载相应版本的 chromedriver，把下载下来的 chromedriver.exe 文件放在和 Autoticket.py 同个目录下
+
+Mac: 打开终端执行
+```
+brew reinstall chromedriver
+```
 
 <br>
 

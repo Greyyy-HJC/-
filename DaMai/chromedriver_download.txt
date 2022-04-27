@@ -1,5 +1,11 @@
-查看 chromedriver 版本：
+目标：下载一个和 chrome 浏览器版本相同的 chromedriver。
+
+查看 chrome 浏览器版本：
 http://www.xitongcheng.com/jiaocheng/dnrj_article_67100.html
 
 chromedriver 下载地址：
 http://chromedriver.storage.googleapis.com/index.html
+
+如果是 Mac，打开终端执行：
+brew reinstall chromedriver
+一般会自动更新到最新版本的 chromedriver，可以检查一下是否和 chrome 浏览器版本相同。
