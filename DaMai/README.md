@@ -11,4 +11,4 @@
 
 - Windows 用户从微软应用商店下载 Python 3.9
 
-- 依赖安装，`pip install -r requirements.txt`
+- 依赖安装，`pip install -r requirements`
