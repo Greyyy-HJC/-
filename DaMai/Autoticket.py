@@ -9,6 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager # find chrome autoly
 # import sys # 用于py2.7时解注释
 
 # reload(sys) # 用于py2.7时解注释
@@ -91,7 +92,7 @@ class Concert(object):
     def login(self):
         if not exists('cookies.pkl'):  # 如果不存在cookie.pkl,就获取一下
             if self.browser == 0: # 选择了Chrome浏览器
-                self.driver = webdriver.Chrome()
+                self.driver = webdriver.Chrome(ChromeDriverManager().install())
             elif self.browser == 1: # 选择了Firefox浏览器
                 self.driver = webdriver.Firefox()
             else:
